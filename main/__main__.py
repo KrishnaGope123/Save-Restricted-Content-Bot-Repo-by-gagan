@@ -1,21 +1,17 @@
-#Join me @dev_gagan
+#Dhrubo
 
 import logging
 import time
-#from . import bot
-#12
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import os
 
-#logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-#                    level=logging.WARNING)
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 logging.getLogger("telethon").setLevel(logging.WARNING)
-#logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 botStartTime = time.time()
-
 
 print("Successfully deployed!")
 print("Bot Deployed : Team SPY")
@@ -40,5 +36,24 @@ if __name__ == "__main__":
     print("\033[31m | |_| |\033[33m| |___|\033[32m |__| |\033[34m |_| |\033[35m |_| |\033[36m |\  |")
     print("\033[31m |____/ \033[33m|_____|\033[32m\____/ \033[34m\____|\033[35m|____/ \033[36m|_| \_|")
     print("\033[0m")
+    
+    # Starting a simple HTTP server for health check
+    class HealthCheckHandler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(b"Bot is running")
+
+    port = int(os.environ.get("PORT", 8080))
+    server_address = ('', port)
+    httpd = HTTPServer(server_address, HealthCheckHandler)
+    logger.info(f'Starting health check server on port {port}')
+    
+    from threading import Thread
+    server_thread = Thread(target=httpd.serve_forever)
+    server_thread.daemon = True
+    server_thread.start()
+    
     bot.run_until_disconnected()
 
