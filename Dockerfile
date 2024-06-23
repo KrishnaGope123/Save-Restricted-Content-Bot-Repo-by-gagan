@@ -1,3 +1,5 @@
+#DHRUBO
+
 # Use an official Python runtime as a parent image
 FROM python:3.10-slim-buster
 
@@ -20,6 +22,9 @@ COPY . .
 
 # Install Python dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
+
+# Expose the port your app runs on
+EXPOSE 8080
 
 # Command to run your application (assuming bash.sh is your entry point)
 CMD ["bash", "bash.sh"]
