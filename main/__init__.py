@@ -27,9 +27,9 @@ FORCESUB = config("FORCESUB", default=None)
 AUTH = config("AUTH", default=None)
 MONGODB = config("MONGODB", default=MDB)
 OWN = 7065117445 # edit this
-GROUP = -1001878947221 # edit this
+GROUP = None  # edit this if needed
 OWNER_ID = int(config("OWNER_ID", default=OWN))
-LOG_GROUP = int(config("LOG_GROUP", default=GROUP))
+LOG_GROUP = int(config("LOG_GROUP", default=GROUP) if config("LOG_GROUP", default=GROUP) is not None else -1)
 
 SUDO_USERS = []
 
