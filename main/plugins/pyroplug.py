@@ -81,7 +81,7 @@ async def copy_message_with_chat_id(client, sender, chat_id, message_id):
         for word, replace_word in replacements.items():
             final_caption = final_caption.replace(word, replace_word)
         
-        caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
+        caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[RAJ RISHI](https://t.me/devggn)**__"
         
         if msg.media:
             if msg.media == MessageMediaType.VIDEO:
@@ -154,7 +154,7 @@ async def send_video_with_chat_id(client, sender, path, caption, duration, hi, w
             progress=progress_for_pyrogram,
             progress_args=(
                 client,
-                '**__Uploading: [Team SPY](https://t.me/devggn)__**\n ',
+                '**__Uploading: [RAJ RISHI](https://t.me/devggn)__**\n ',
                 upm,
                 time.time()
             )
@@ -181,7 +181,7 @@ async def send_document_with_chat_id(client, sender, path, caption, thumb_path, 
             progress=progress_for_pyrogram,
             progress_args=(
                 client,
-                '**__Uploading:__**\n**__Bot made by [Team SPY](https://t.me/devggn)__**',
+                '**__Uploading:__**\n**__Bot made by [RAJ RISHI](https://t.me/devggn)__**',
                 upm,
                 time.time()
             )
@@ -643,10 +643,10 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
             edit = await client.edit_message_text(sender, edit_id, "Trying to Download.")
             user_session = user_sessions.get(sender)
             if user_session:
-              file = await user_bot.download_media(msg, progress=progress_for_pyrogram, progress_args=(client, "**__Unrestricting__: __[Team SPY](https://t.me/devggn)__**\n ", edit, time.time()))
+              file = await user_bot.download_media(msg, progress=progress_for_pyrogram, progress_args=(client, "**__Unrestricting__: __[RAJ RISHI](https://t.me/devggn)__**\n ", edit, time.time()))
               await user_bot.stop()
             else:
-              file = await userbot.download_media(msg, progress=progress_for_pyrogram, progress_args=(client, "**__Unrestricting__: __[Team SPY](https://t.me/devggn)__**\n ", edit, time.time()))            # Retrieve user's custom renaming preference if set, default to '@RAJn' otherwise
+              file = await userbot.download_media(msg, progress=progress_for_pyrogram, progress_args=(client, "**__Unrestricting__: __[RAJ RISHI](https://t.me/devggn)__**\n ", edit, time.time()))            # Retrieve user's custom renaming preference if set, default to '@RAJn' otherwise
             custom_rename_tag = get_user_rename_preference(sender)
             # retriving name 
             last_dot_index = str(file).rfind('.')
@@ -712,7 +712,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
                   final_caption = final_caption.replace(word, replace_word)  
                 # final_caption = re.sub(r'\s{2,}', '  ', final_caption.strip())
                 # final_caption = re.sub(r'\n{2,}', '\n\n', final_caption)
-                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
+                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[RAJ RISHI](https://t.me/devggn)**__"
                 await send_video_with_chat_id(client, sender, path, caption, duration, hi, wi, thumb_path, upm)
             elif str(file).split(".")[-1] in ['jpg', 'jpeg', 'png', 'webp']:
                 if file_n != '':
@@ -746,7 +746,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
                   final_caption = final_caption.replace(word, replace_word)  
                 # final_caption = re.sub(r'\s{2,}', '  ', final_caption.strip())
                 # final_caption = re.sub(r'\n{2,}', '\n\n', final_caption)
-                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
+                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[RAJ RISHI](https://t.me/devggn)**__"
                 await send_document_with_chat_id(client, sender, path, caption, thumb_path, upm)
                     
             os.remove(file)
@@ -843,7 +843,7 @@ async def x(userbot, client, sender, edit_id, msg_link, i, file_n):
                 progress=progress_for_pyrogram,
                 progress_args=(
                     client,
-                    "**__Unrestricting__: __[Team SPY](https://t.me/dev_gagan)__**\n ",
+                    "**__Unrestricting__: __[RAJ RISHI](https://t.me/dev_gagan)__**\n ",
                     edit,
                     time.time()
                 )
@@ -884,7 +884,7 @@ async def x(userbot, client, sender, edit_id, msg_link, i, file_n):
                     logging.info(e)
                     thumb_path = None
                 
-                caption = f"{msg.caption}\n\n__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__" if msg.caption else "__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__"
+                caption = f"{msg.caption}\n\n__Unrestricted by **[RAJ RISHI](https://t.me/dev_gagan)**__" if msg.caption else "__Unrestricted by **[RAJ RISHI](https://t.me/dev_gagan)**__"
                 await send_video_with_chat_id(client, sender, path, caption, duration, hi, wi, thumb_path, upm)
             elif str(file).split(".")[-1] in ['jpg', 'jpeg', 'png', 'webp']:
                 if file_n != '':
@@ -898,7 +898,7 @@ async def x(userbot, client, sender, edit_id, msg_link, i, file_n):
                     file = path
 
                 
-                caption = f"{msg.caption}\n\n__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__" if msg.caption else "__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__"
+                caption = f"{msg.caption}\n\n__Unrestricted by **[RAJ RISHI](https://t.me/dev_gagan)**__" if msg.caption else "__Unrestricted by **[RAJ RISHI](https://t.me/dev_gagan)**__"
                 await upm.edit("__Uploading photo...__")
 
                 await bot.send_file(sender, path, caption=caption)
@@ -914,7 +914,7 @@ async def x(userbot, client, sender, edit_id, msg_link, i, file_n):
                     file = path
                 thumb_path = await screenshot(file, duration, sender)
                 
-                caption = f"{msg.caption}\n\n__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__" if msg.caption else "__Unrestricted by **[Team SPY](https://t.me/dev_gagan)**__"
+                caption = f"{msg.caption}\n\n__Unrestricted by **[RAJ RISHI](https://t.me/dev_gagan)**__" if msg.caption else "__Unrestricted by **[RAJ RISHI](https://t.me/dev_gagan)**__"
                 await send_document_with_chat_id(client, sender, path, caption, thumb_path, upm)
             os.remove(file)
             await upm.delete()
@@ -1006,10 +1006,10 @@ async def ggn_new(userbot, client, sender, edit_id, msg_link, i, file_n):
             edit = await client.edit_message_text(sender, edit_id, "Trying to Download.")
             user_session = user_sessions.get(sender)
             if user_session:
-              file = await user_bot.download_media(msg, progress=progress_for_pyrogram, progress_args=(client, "**__Unrestricting__: __[Team SPY](https://t.me/devggn)__**\n ", edit, time.time()))
+              file = await user_bot.download_media(msg, progress=progress_for_pyrogram, progress_args=(client, "**__Unrestricting__: __[RAJ RISHI](https://t.me/devggn)__**\n ", edit, time.time()))
               await user_bot.stop()
             else:
-              file = await userbot.download_media(msg, progress=progress_for_pyrogram, progress_args=(client, "**__Unrestricting__: __[Team SPY](https://t.me/devggn)__**\n ", edit, time.time()))            # Retrieve user's custom renaming preference if set, default to '@RAJn' otherwise
+              file = await userbot.download_media(msg, progress=progress_for_pyrogram, progress_args=(client, "**__Unrestricting__: __[RAJ RISHI](https://t.me/devggn)__**\n ", edit, time.time()))            # Retrieve user's custom renaming preference if set, default to '@RAJn' otherwise
             custom_rename_tag = get_user_rename_preference(sender)
             # retriving name 
             last_dot_index = str(file).rfind('.')
@@ -1070,7 +1070,7 @@ async def ggn_new(userbot, client, sender, edit_id, msg_link, i, file_n):
                   final_caption = final_caption.replace(word, replace_word)  
                 # final_caption = re.sub(r'\s{2,}', '  ', final_caption.strip())
                 # final_caption = re.sub(r'\n{2,}', '\n\n', final_caption)
-                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
+                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[RAJ RISHI](https://t.me/devggn)**__"
                 await send_video_with_chat_id(client, sender, path, caption, duration, hi, wi, thumb_path, upm)
             elif str(file).split(".")[-1] in ['jpg', 'jpeg', 'png', 'webp']:
                 if file_n != '':
@@ -1104,7 +1104,7 @@ async def ggn_new(userbot, client, sender, edit_id, msg_link, i, file_n):
                   final_caption = final_caption.replace(word, replace_word)  
                 # final_caption = re.sub(r'\s{2,}', '  ', final_caption.strip())
                 # final_caption = re.sub(r'\n{2,}', '\n\n', final_caption)
-                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[Team SPY](https://t.me/devggn)**__"
+                caption = f"{final_caption}\n\n__**{custom_caption}**__" if custom_caption else f"{final_caption}\n\n__**[RAJ RISHI](https://t.me/devggn)**__"
                 await send_document_with_chat_id(client, sender, path, caption, thumb_path, upm)
                     
             os.remove(file)
